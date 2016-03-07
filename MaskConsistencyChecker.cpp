@@ -31,7 +31,7 @@ void MaskConsistencyChecker::SetMaskTest(cv::Mat maskTest)
 	cv::Mat temp;
 
 	cv::cvtColor(maskTest, temp, CV_BGR2GRAY );
-	cv::threshold(temp, mask_test_, 1, 255, cv::THRESH_BINARY);
+	cv::threshold(temp, mask_test_, 10, 255, cv::THRESH_BINARY);
 }
 
 cv::Mat MaskConsistencyChecker::GetMaskTruth() const
@@ -44,7 +44,7 @@ void MaskConsistencyChecker::SetMaskTruth(cv::Mat maskTruth)
 	cv::Mat temp;
 
 	cv::cvtColor(maskTruth, temp, CV_BGR2GRAY );
-	cv::threshold(temp, mask_truth_, 1, 255, cv::THRESH_BINARY);
+	cv::threshold(temp, mask_truth_, 10, 255, cv::THRESH_BINARY);
 }
 cv::Mat MaskConsistencyChecker::GetMaskResult() const
 {
