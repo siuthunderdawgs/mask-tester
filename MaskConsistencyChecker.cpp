@@ -143,3 +143,17 @@ int MaskConsistencyChecker::GetNumWrongFp() const {
 	return num_wrong_fp_;
 }
 
+double MaskConsistencyChecker::GetPercentCorrect() const {
+	double rval = double(num_right_on_ + num_right_off_)/num_px_;
+	return rval;
+}
+
+double MaskConsistencyChecker::GetPercentFalsePositive() const {
+	double rval = double(num_wrong_fp_)/num_px_;
+	return rval;
+}
+
+double MaskConsistencyChecker::GetPercentFalseNegative() const {
+	double rval = double(num_wrong_fn_)/num_px_;
+	return rval;
+}

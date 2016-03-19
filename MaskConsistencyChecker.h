@@ -32,6 +32,10 @@ public:
 	int GetNumWrongFn() const;
 	int GetNumWrongFp() const;
 
+	double GetPercentCorrect() const;
+	double GetPercentFalsePositive() const;
+	double GetPercentFalseNegative() const;
+
 private:
 	cv::Mat mask_truth_;
 	cv::Mat mask_test_;

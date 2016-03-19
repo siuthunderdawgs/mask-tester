@@ -61,9 +61,9 @@ int main(int argc, char** argv)
 	cv::namedWindow("Mask Image");
 	cv::imshow("Mask Image", mask_result);
 
-	std::cout << "Correct: " << double(checker.GetNumRightOn() + checker.GetNumRightOff())/checker.GetNumPx()*100 << " %" << std::endl;
-	std::cout << "False Pos: " << double(checker.GetNumWrongFp())/checker.GetNumPx()*100 << " %" << std::endl;
-	std::cout << "False Neg: " << double(checker.GetNumWrongFn())/checker.GetNumPx()*100 << " %" << std::endl;
+	std::cout << "Correct: " << checker.GetPercentCorrect()*100 << " %" << std::endl;
+	std::cout << "False Pos: " << checker.GetPercentFalsePositive()*100 << " %" << std::endl;
+	std::cout << "False Neg: " << checker.GetPercentFalseNegative()*100 << " %" << std::endl;
 
 	while(char(cv::waitKey(1)) != 'q'){}
 
